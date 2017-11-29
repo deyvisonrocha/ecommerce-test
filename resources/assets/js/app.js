@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+var uiv = require('uiv');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,7 +16,12 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('top', require('./components/Top.vue'));
+Vue.component('panel', require('./components/Panel.vue'));
+Vue.component('product-list', require('./components/products/ProductList.vue'));
+Vue.component('category-list', require('./components/categories/CategoryList.vue'));
+
+Vue.use(uiv, { prefix: 'uiv' })
 
 const app = new Vue({
     el: '#app'
